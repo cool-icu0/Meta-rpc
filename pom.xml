@@ -12,7 +12,8 @@
         <module>example-consumer</module>
         <module>example-common</module>
         <module>example-provider</module>
-        <module>meta-rpc-easy</module>
+        <module>rpc-easy</module>
+        <module>rpc-core</module>
     </modules>
 
     <properties>
