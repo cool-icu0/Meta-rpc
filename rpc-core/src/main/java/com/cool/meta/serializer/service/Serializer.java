@@ -1,4 +1,4 @@
-package com.cool.meta.serializer;
+package com.cool.meta.serializer.service;
 
 
 import java.io.IOException;

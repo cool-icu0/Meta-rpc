@@ -1,12 +1,13 @@
 package com.cool.meta.server;
 
 
-
+import com.cool.meta.RpcApplication;
 import com.cool.meta.model.RpcRequest;
 import com.cool.meta.model.RpcResponse;
 import com.cool.meta.registry.LocalRegistry;
-import com.cool.meta.serializer.JdkSerializer;
-import com.cool.meta.serializer.Serializer;
+import com.cool.meta.serializer.SerializerFactory;
+import com.cool.meta.serializer.service.impl.JdkSerializer;
+import com.cool.meta.serializer.service.Serializer;
 import io.vertx.core.Handler;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.http.HttpServerRequest;
@@ -23,7 +24,8 @@ public class HttpServerHandler implements Handler<HttpServerRequest> {
     @Override
     public void handle(HttpServerRequest request) {
         // 指定序列化器
-        final Serializer serializer = new JdkSerializer();
+        //final Serializer serializer = new JdkSerializer();
+        final Serializer serializer = SerializerFactory.getInstance(RpcApplication.getRpcConfig().getSerializer());
 
         // 记录日志
         System.out.println("Received request: " + request.method() + " " + request.uri());

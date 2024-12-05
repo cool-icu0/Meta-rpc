@@ -1,4 +1,6 @@
-package com.cool.meta.serializer;
+package com.cool.meta.serializer.service.impl;
+
+import com.cool.meta.serializer.service.Serializer;
 
 import java.io.*;
 

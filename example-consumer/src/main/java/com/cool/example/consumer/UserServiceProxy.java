@@ -7,8 +7,8 @@ import com.cool.example.model.User;
 import com.cool.example.service.UserService;
 import com.cool.meta.model.RpcRequest;
 import com.cool.meta.model.RpcResponse;
-import com.cool.meta.serializer.JdkSerializer;
-import com.cool.meta.serializer.Serializer;
+import com.cool.meta.serializer.service.impl.JdkSerializer;
+import com.cool.meta.serializer.service.Serializer;
 
 import java.io.IOException;
 
