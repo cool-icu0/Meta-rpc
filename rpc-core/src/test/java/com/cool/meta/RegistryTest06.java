@@ -4,18 +4,13 @@ import com.cool.meta.config.RegistryConfig;
 import com.cool.meta.model.ServiceMetaInfo;
 import com.cool.meta.registry.service.Registry;
 import com.cool.meta.registry.service.impl.EtcdRegistry;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
 
-/**
- * 注册中心测试
- *
- */
-public class RegistryTest {
+public class RegistryTest06 {
 
     final Registry registry = new EtcdRegistry();
 
@@ -66,5 +61,13 @@ public class RegistryTest {
         String serviceKey = serviceMetaInfo.getServiceKey();
         List<ServiceMetaInfo> serviceMetaInfoList = registry.serviceDiscovery(serviceKey);
         Assert.assertNotNull(serviceMetaInfoList);
+    }
+
+    @Test
+    public void heartBeat() throws Exception {
+        // init 方法中已经执行心跳检测了
+        register();
+        // 阻塞 1 分钟
+        Thread.sleep(60 * 1000L);
     }
 }
