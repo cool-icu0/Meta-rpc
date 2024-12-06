@@ -111,12 +111,10 @@ public class SpiLoader {
                     BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
                     String line;
                     while ((line = bufferedReader.readLine()) != null) {
-                        log.info("读取到的文件内容为 {}", line);
                         String[] strArray = line.split("=");
                         if (strArray.length > 1) {
                             String key = strArray[0];
                             String className = strArray[1];
-                            log.info("key={}, className={}", key, className);
                             keyClassMap.put(key, Class.forName(className));
                         }
                     }
