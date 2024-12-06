@@ -6,7 +6,6 @@ import com.cool.meta.model.RpcRequest;
 import com.cool.meta.model.RpcResponse;
 import com.cool.meta.registry.LocalRegistry;
 import com.cool.meta.serializer.SerializerFactory;
-import com.cool.meta.serializer.service.impl.JdkSerializer;
 import com.cool.meta.serializer.service.Serializer;
 import io.vertx.core.Handler;
 import io.vertx.core.buffer.Buffer;

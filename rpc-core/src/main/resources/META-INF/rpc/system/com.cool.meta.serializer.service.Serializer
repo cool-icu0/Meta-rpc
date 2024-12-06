@@ -1,0 +1,4 @@
+jdk=com.cool.meta.serializer.service.impl.JdkSerializer
+hessian=com.cool.meta.serializer.service.impl.HessianSerializer
+json=com.cool.meta.serializer.service.impl.JsonSerializer
+kryo=com.cool.meta.serializer.service.impl.KryoSerializer

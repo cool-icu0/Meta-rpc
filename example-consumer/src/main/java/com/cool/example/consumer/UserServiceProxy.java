@@ -5,8 +5,10 @@ import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
 import com.cool.example.model.User;
 import com.cool.example.service.UserService;
+import com.cool.meta.RpcApplication;
 import com.cool.meta.model.RpcRequest;
 import com.cool.meta.model.RpcResponse;
+import com.cool.meta.serializer.SerializerFactory;
 import com.cool.meta.serializer.service.impl.JdkSerializer;
 import com.cool.meta.serializer.service.Serializer;
 

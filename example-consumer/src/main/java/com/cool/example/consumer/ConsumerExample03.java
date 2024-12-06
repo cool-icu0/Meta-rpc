@@ -2,7 +2,9 @@ package com.cool.example.consumer;
 
 import com.cool.example.model.User;
 import com.cool.example.service.UserService;
+import com.cool.meta.config.RpcConfig;
 import com.cool.meta.proxy.ServiceProxyFactory;
+import com.cool.meta.utils.ConfigUtils;
 
 /**
  * 简易服务消费者示例

@@ -7,7 +7,6 @@ import com.cool.meta.RpcApplication;
 import com.cool.meta.model.RpcRequest;
 import com.cool.meta.model.RpcResponse;
 import com.cool.meta.serializer.SerializerFactory;
-import com.cool.meta.serializer.service.impl.JdkSerializer;
 import com.cool.meta.serializer.service.Serializer;
 
 import java.io.IOException;
