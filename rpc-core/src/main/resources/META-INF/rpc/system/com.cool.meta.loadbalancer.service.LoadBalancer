@@ -1,0 +1,3 @@
+roundRobin=com.cool.meta.loadbalancer.service.impl.RoundRobinLoadBalancer
+random=com.cool.meta.loadbalancer.service.impl.RandomLoadBalancer
+consistentHash=com.cool.meta.loadbalancer.service.impl.ConsistentHashLoadBalancer

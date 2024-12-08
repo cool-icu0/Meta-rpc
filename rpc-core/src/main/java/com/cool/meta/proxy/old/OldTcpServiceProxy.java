@@ -1,38 +1,30 @@
-package com.cool.meta.proxy;
+package com.cool.meta.proxy.old;
 
 import cn.hutool.core.collection.CollUtil;
-import cn.hutool.core.util.IdUtil;
 import com.cool.meta.RpcApplication;
 import com.cool.meta.config.RpcConfig;
-import com.cool.meta.constant.ProtocolConstant;
 import com.cool.meta.constant.RpcConstant;
 import com.cool.meta.loadbalancer.LoadBalancerFactory;
 import com.cool.meta.loadbalancer.service.LoadBalancer;
 import com.cool.meta.model.RpcRequest;
 import com.cool.meta.model.RpcResponse;
 import com.cool.meta.model.ServiceMetaInfo;
-import com.cool.meta.protocol.*;
 import com.cool.meta.registry.RegistryFactory;
 import com.cool.meta.registry.service.Registry;
 import com.cool.meta.serializer.SerializerFactory;
 import com.cool.meta.serializer.service.Serializer;
 import com.cool.meta.server.tcp.VertxTcpClient;
-import io.vertx.core.Vertx;
-import io.vertx.core.buffer.Buffer;
-import io.vertx.core.net.NetClient;
 
-import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.CompletableFuture;
 
 /**
  * 服务代理（JDK 动态代理）
  */
-public class TcpServiceProxy implements InvocationHandler {
+public class OldTcpServiceProxy implements InvocationHandler {
     /**
      * 调用代理
      *
