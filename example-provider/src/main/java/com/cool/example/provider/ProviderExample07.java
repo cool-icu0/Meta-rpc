@@ -9,13 +9,12 @@ import com.cool.meta.model.ServiceMetaInfo;
 import com.cool.meta.registry.LocalRegistry;
 import com.cool.meta.registry.RegistryFactory;
 import com.cool.meta.registry.service.Registry;
-import com.cool.meta.server.HttpServer;
-import com.cool.meta.server.http.VertxHttpServer;
+import com.cool.meta.server.tcp.VertxTcpServer;
 
 /**
  * 服务提供者示例
  */
-public class ProviderExample05 {
+public class ProviderExample07 {
 
     public static void main(String[] args) {
         // RPC 框架初始化
@@ -39,8 +38,8 @@ public class ProviderExample05 {
             throw new RuntimeException(e);
         }
 
-        // 启动 web 服务
-        HttpServer httpServer = new VertxHttpServer();
-        httpServer.doStart(RpcApplication.getRpcConfig().getServerPort());
+        // 启动 TCP 服务
+        VertxTcpServer vertxTcpServer = new VertxTcpServer();
+        vertxTcpServer.doStart(8080);
     }
 }

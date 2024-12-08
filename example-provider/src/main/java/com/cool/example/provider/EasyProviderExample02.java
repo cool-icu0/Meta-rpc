@@ -4,7 +4,7 @@ import com.cool.example.service.UserService;
 import com.cool.meta.RpcApplication;
 import com.cool.meta.registry.LocalRegistry;
 import com.cool.meta.server.HttpServer;
-import com.cool.meta.server.VertxHttpServer;
+import com.cool.meta.server.http.VertxHttpServer;
 
 /**
  * 简易服务提供者示例

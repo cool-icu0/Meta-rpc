@@ -1,5 +1,6 @@
-package com.cool.meta.server;
+package com.cool.meta.server.http;
 
+import com.cool.meta.server.HttpServer;
 import io.vertx.core.Vertx;
 
 /**

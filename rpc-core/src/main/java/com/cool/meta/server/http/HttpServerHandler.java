@@ -1,4 +1,4 @@
-package com.cool.meta.server;
+package com.cool.meta.server.http;
 
 
 import com.cool.meta.RpcApplication;
