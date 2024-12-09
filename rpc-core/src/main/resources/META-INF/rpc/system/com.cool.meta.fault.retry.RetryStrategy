@@ -1,0 +1,3 @@
+no=com.cool.meta.fault.retry.impl.NoRetryStrategy
+fixedInterval=com.cool.meta.fault.retry.impl.FixedIntervalRetryStrategy
+exponentialBackoff=com.cool.meta.fault.retry.impl.ExponentialBackoffRetryStrategy

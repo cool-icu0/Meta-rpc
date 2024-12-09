@@ -6,6 +6,8 @@ import com.cool.meta.RpcApplication;
 import com.cool.meta.config.RpcConfig;
 import com.cool.meta.constant.ProtocolConstant;
 import com.cool.meta.constant.RpcConstant;
+import com.cool.meta.fault.retry.RetryStrategy;
+import com.cool.meta.fault.retry.RetryStrategyFactory;
 import com.cool.meta.loadbalancer.LoadBalancerFactory;
 import com.cool.meta.loadbalancer.service.LoadBalancer;
 import com.cool.meta.model.RpcRequest;
@@ -70,8 +72,14 @@ public class TcpServiceProxy implements InvocationHandler {
             Map<String, Object> requestParams = new HashMap<>();
             requestParams.put("methodName", rpcRequest.getMethodName());
             ServiceMetaInfo selectedServiceMetaInfo = serviceMetaInfoList.get(0);
-            // 发送 TCP 请求
-            RpcResponse rpcResponse = VertxTcpClient.doRequest(rpcRequest, selectedServiceMetaInfo);
+
+
+            // 发送 RPC 请求
+            // 使用重试机制
+            RetryStrategy retryStrategy = RetryStrategyFactory.getInstance(rpcConfig.getRetryStrategy());
+            RpcResponse rpcResponse = retryStrategy.doRetry(() ->
+                    VertxTcpClient.doRequest(rpcRequest, selectedServiceMetaInfo)
+            );
             return rpcResponse.getData();
         } catch (Exception e) {
             throw new RuntimeException("调用失败");
